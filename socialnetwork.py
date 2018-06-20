@@ -11,7 +11,7 @@ class User:
         ##self.userID = userID
         self.friendsList = []
         self.posts = []
-       
+        self.userID = ""       
 
     def addfirstName(self, firstName):
         self.firstName = firstName
@@ -41,10 +41,44 @@ class User:
     def viewNewsFeed(self):
         for friends in self.friendsList:
            print (friends.posts)
-           
+
+    def createPost(self, content):
+        myPost = post(content)
+        self.post.append(myPost)
+        myPost.createPostID(len(posts))
+                            
+    def createUserID(self, num):
+        self.userID = num
+
+            
+class Post:
+    def __init__(self, content):
+        self.content = content
+        self.postID = ""
+        self.comments = []
+
+    def createPostID(self, num):
+        self.postID = num    
+                            
+class Network:
+    def __init__(self):
+        self.users = []
+        print("User Created")
+    def createUser(self, username):
+        for i in users:
+            if(i.username == username):
+                print("username taken")
+        myUser = User(username)
+        self.users.append(myUser)
+        mySize = len(self.users)
+        myUser.createID(len(users))
         
+        print("user.created")
 
 if __name__ == "__main__":
+
+    network = Network()
+    network.createUser("jocelyne")
 
     username = "jocelyne"
 
@@ -65,6 +99,7 @@ if __name__ == "__main__":
 ##    print(jocelyne.friendsList)
 
     lucy.posts.append("THIS IS MY FIRST POST")
+    
     churrosanchez.posts.append("goodnight")
     thejazziestjaz.posts.append("music can end war")
 ##    print(lucy.posts)
